@@ -1,0 +1,23 @@
+
+module synchronizer(input logic clk, reset,
+                    input logic WE_synch,
+                    input logic [3:0] inputrows,
+                    output logic [3:0] synchrows,
+                    output logic synch_done);
+
+always_ff @(posedge clk) begin
+    if (reset) begin
+        synch_count <= 2'b0;
+    end
+    else if (WE_synch) begin
+		synch_count <= synch_count + 2'b01;
+		synch_branch <= inputrows;
+		synchrows <= synch_branch;
+	end
+end
+
+assign synch_done = (synch_count == 2'b10);
+
+endmodule
+
+    

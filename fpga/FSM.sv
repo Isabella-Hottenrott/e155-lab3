@@ -7,7 +7,7 @@ module lab3fsm(input logic clk,
 				typedef enum logic [2:0] {s0, s1, s2, s3, s4, s5} statetype;
 				statetype state, nstate;
 				
-				always_ff@(posedge clk, posedge reset)
+				always_ff@(posedge clk)
 					if (reset) state <= s0;
 					else state <= nstate;
 						
@@ -35,13 +35,16 @@ module lab3fsm(input logic clk,
 						default: nstate = state;
 					endcase
 					
-					
-				assign scan_counter_en = (state == s0);
-				assign WE_synch = (state == s1);
-				assign debounce_counter_en = (state == s2);
-				assign check_again = (state == s3);
-				assign WE_send = (state == s4);
+				assign scan_counter_en = (~buttonpush && (state == s0));	
 				
+					
+				always_comb 
+					begin
+						WE_synch = (state == s1);
+						debounce_counter_en = (state == s2);
+						check_again = (state == s3);
+						WE_send = (state == s4);
+					end
 				
 				endmodule;
 				
