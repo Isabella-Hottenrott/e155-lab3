@@ -3,12 +3,12 @@ module seg_ff(input logic clk, reset,
             input logic [3:0] cols,
             input logic [3:0] synchrows,
             output logic [8:0] seg0,
-            output logic [8:0] seg1)
+            output logic [8:0] seg1);
 
 always_ff @(posedge clk) begin
     if (reset) begin
-        seg1 <= 9'b0;
-		seg0 <= 9'b0;
+      seg1 <= 9'b0;
+		  seg0 <= 9'b0;
     end
 
     else if (WE_send) begin

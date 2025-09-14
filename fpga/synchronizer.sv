@@ -5,15 +5,21 @@ module synchronizer(input logic clk, reset,
                     output logic [3:0] synchrows,
                     output logic synch_done);
 
+logic [3:0] synch_branch;
+logic [1:0] synch_count;
+
 always_ff @(posedge clk) begin
     if (reset) begin
-        synch_count <= 2'b0;
+        synch_count <= 2'b00;
     end
     else if (WE_synch) begin
 		synch_count <= synch_count + 2'b01;
 		synch_branch <= inputrows;
 		synchrows <= synch_branch;
 	end
+    else begin 
+        synch_count <= 2'b00; 
+        end
 end
 
 assign synch_done = (synch_count == 2'b10);

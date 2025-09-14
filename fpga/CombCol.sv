@@ -1,13 +1,13 @@
-module CombCol(input logic [1:0] inCols,
-                output logic [3:0] outCols);
+module combcol(input logic [1:0] incols,
+                output logic [3:0] outcols);
 
                 //creating encoding for rows
                 always_comb
-					case(inCols)
-						0:		outCols = 4'b0001;
-						1:		outCols = 4'b0010;
-						2:		outCols = 4'b0100;
-						3:		outCols = 4'b1000;
+					case(incols)
+						0:		outcols = 4'b0001;
+						1:		outcols = 4'b0010;
+						2:		outcols = 4'b0100;
+						3:		outcols = 4'b1000;
 					endcase
 					
 

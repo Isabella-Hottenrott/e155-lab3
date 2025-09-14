@@ -1,0 +1,41 @@
+// Isabella Hottenrott
+// tb_debouncer.sv
+// ihottenrott@g.hmc.edu
+// 13/9/2025
+// Testbench for debouncer.sv module in Lab3ih
+
+module tb_debouncer();
+	logic clk, reset;
+    logic debouncer_counter_en, debounce_done, exp_debounce_done;
+	
+	debouncer dut(.clk(clk), .reset(reset), .debouncer_counter_en(debouncer_counter_en), .debounce_done(debounce_done));
+
+
+	always
+		begin
+			clk=1; #5;
+			clk=0; #5;
+		end
+		
+	initial begin
+			errors=0; #10; vectornum=5'd1; reset=1; exp_debounce_done=0; #10; reset=0;
+			
+			vectornum=5'd2; debounce_counter_en=1'b0; exp_debounce_done=0; #30; vectornum=5'd3; exp_debounce_done=0;
+			#10; debounce_counter_en=1'b1;
+            #10; vectornum=5'd4; exp_debounce_done=0;
+            #10; vectornum=5'd5; exp_debounce_done=0;
+            #10; vectornum=5'd6; exp_debounce_done=1;
+			$display("completed with %d errors", errors);
+			$stop;
+		end
+		
+
+	always @(negedge clk)
+		if (~reset) begin
+			if (outcols !== outcolsexp) begin
+				$display("Error: on test = %d ", vectornum);
+				errors = errors + 1;
+			end
+
+end 
+endmodule

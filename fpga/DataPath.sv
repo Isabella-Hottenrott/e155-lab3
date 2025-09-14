@@ -5,11 +5,13 @@ module DataPath(input logic clk, reset,
 				output logic [8:0] seg0, seg1,
 				output logic [3:0] cols);
 				
-				logic [1:0] encoded_rows, encoded_cols, synch_count;
-				logic [3:0] synch_branch, synchrows, debounce_count;
+				logic [1:0] encoded_cols;
+				logic [3:0] synchrows, debounce_count;
 				
-				
-				CombCol CombCol(.inCols(encoded_cols), .outCols(cols));
+
+				scancounter scancounter(.clk(clk), .reset(reset), .scan_counter_en(scan_counter_en), .encoded_cols(encoded_cols));
+
+				combcol combcol(.incols(encoded_cols), .outcols(cols));
 					
 				synchronizer synchronizer(.clk(clk), .reset(reset), .WE_synch(WE_synch), .inputrows(inputrows), .synchrows(synchrows), .synch_done(synch_done));
 
