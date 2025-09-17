@@ -20,7 +20,7 @@ always_comb
         8'b10000100:  digit = 4'b1101;
         8'b00011000:  digit = 4'b0001;
         8'b00101000:  digit = 4'b0010;
-        8'b01001000:  digit = 4'b0010;
+        8'b01001000:  digit = 4'b0011;
         8'b10001000:  digit = 4'b1100;
         default:      digit = 4'b0000;
     endcase

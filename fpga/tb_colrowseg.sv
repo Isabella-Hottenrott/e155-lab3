@@ -1,6 +1,6 @@
 module tb_colrowseg();
-	logic clk, reset, anode;
-    logic [3:0] digit;
+	logic clk, reset, anode, anexp;
+    logic [3:0] digit, expdigit;
     logic [8:0] col_row_comb;
 	logic [4:0] vectornum, errors;
 	

@@ -7,39 +7,33 @@
 module tb_top();
     logic clk, reset;
     logic [3:0] cols, inputrows;
-    logic [6:0] segment0, segment1;
-    logic seg0anode, seg1anode;
+    logic [6:0] segmentOut;
+    logic anodeZeroOut, anodeOneOut;
     logic [9:0] errors;
     logic [4:0] vectornum;
-
-
-    
-    lab3_ih dut(.clk(clk), .reset(reset), .inputrows(inputrows), .cols(cols), .segment0(segment0), .segment1(segment1), .seg0anode(seg0anode), 
-                .seg1anode(seg1anode));
-
-
-    always
-        begin
-            clk=1; #1;
-            clk=0; #1;
-        end
-        
+	logic [15:0] clockticks;
+				
+	assign clk = dut.clk;
+	
+	`timescale 1s/1ps
+		
+    lab3_ih dut(.reset(reset), .inputrows(inputrows), .cols(cols), .segmentOut(segmentOut), .anodeZeroOut(anodeZeroOut), .anodeOneOut(anodeOneOut));
+       
     initial begin
-			reset = 1; #20; reset = 0;
-			#200;
-			// SW1 = 0000, SW2 = 1111, should illuminate anodeTwo
+			reset = 1; #15; reset = 0; vectornum = 5'b0; inputrows = 4'b0;
+			wait(cols == 4'b0010);
+            inputrows = 4'b0100; #10; vectornum = 5'b00010; inputrows = 4'b0000; #2;
 			wait(cols == 4'b0001);
-            #1; inputrows = 4'b0100; #1000; inputrows = 4'b0000; #500000;
-			wait(cols == 4'b0001);
-			inputrows = 4'b1000; #500; inputrows = 4'b0000; #50000;
-
+			inputrows = 4'b1000; vectornum = 5'b00011; #2; vectornum = 5'b00100; inputrows = 4'b0000; #2;
             $stop;
         end
         
 	always @(posedge clk)
 		if (reset) begin
-			vectornum=5'd0; inputrows=4'b0000; 
-			end
+			vectornum=5'd0; inputrows=4'b0000; clockticks = 16'b0;
+			end else begin
+				clockticks = clockticks + 16'b1
+				end
 			
 
  

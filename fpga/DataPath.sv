@@ -1,6 +1,6 @@
 module DataPath(input logic clk, reset,
 				input logic [3:0] inputrows,
-				input logic scan_counter_en, WE_synch, debounce_counter_en, check_again, WE_send,
+				input logic scan_counter_en, WE_synch, debouncer_counter_en, check_again, WE_send,
 				output logic buttonpush, synch_done, debounce_done, post_debounce,
 				output logic [8:0] seg0, seg1,
 				output logic [3:0] cols);

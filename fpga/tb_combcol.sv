@@ -6,7 +6,7 @@
 
 module tb_combcol();
 	logic clk, reset;
-    logic [3:0] outcols;
+    logic [3:0] outcols, outcolsexp;
     logic [1:0] incols;
 	logic [2:0] vectornum, errors;
 	
