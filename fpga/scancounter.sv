@@ -16,6 +16,7 @@ always_ff @(posedge clk, negedge reset) begin
     
     else if (scan_counter_en) begin 
 		encoded_cols <= encoded_cols + 2'b01;
+        // sweep through columns, encoded as a 2 bit number
 	end
 
 end

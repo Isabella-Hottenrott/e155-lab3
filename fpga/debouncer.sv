@@ -19,6 +19,7 @@ module debouncer(input logic clk, reset,
   end
 		
 assign debounce_done = (debounce_count == 20'b0010010010011111000000);
+// waits 600,000 clock ticks, equivalent to 50 ms.
 
 
 endmodule

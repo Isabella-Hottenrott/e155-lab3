@@ -25,6 +25,7 @@ always_ff @(posedge clk) begin
 end
 
 assign synch_done = (synch_count == 2'b10);
+// send a done signal to FSM when two clock cycles have past
 
 endmodule
 
