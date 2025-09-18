@@ -16,7 +16,7 @@ always_ff @(posedge clk) begin
 
     else if (WE_send) begin
 		// WE_send is concatinated for the anode. (off anode drives transistor ON)
-		seg0 <= {(WE_send), cols, synchrows};
+		seg0 <= {(~WE_send), cols, synchrows};
 		seg1 <= seg0;
 	end
 end

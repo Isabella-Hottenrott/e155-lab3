@@ -15,24 +15,24 @@ module tb_top();
 				
 	assign clk = dut.clk;
 	
-	`timescale 1s/1ps
+	`timescale 1ns/1ns;
 		
     lab3_ih dut(.reset(reset), .inputrows(inputrows), .cols(cols), .segmentOut(segmentOut), .anodeZeroOut(anodeZeroOut), .anodeOneOut(anodeOneOut));
        
     initial begin
-			reset = 1; #15; reset = 0; vectornum = 5'b0; inputrows = 4'b0;
+			reset = 0; #1; reset = 1; #1; reset =0; #15; reset=1; vectornum = 5'b0; inputrows = 4'b0;
 			wait(cols == 4'b0010);
-            inputrows = 4'b0100; #10; vectornum = 5'b00010; inputrows = 4'b0000; #2;
+            inputrows = 4'b0100; #1000000000; vectornum = 5'b00010; inputrows = 4'b0000; #100000000;
 			wait(cols == 4'b0001);
-			inputrows = 4'b1000; vectornum = 5'b00011; #2; vectornum = 5'b00100; inputrows = 4'b0000; #2;
+			inputrows = 4'b1000; vectornum = 5'b00011; #1000000000; vectornum = 5'b00100; inputrows = 4'b0000; #1000000000;
             $stop;
         end
         
 	always @(posedge clk)
-		if (reset) begin
+		if (~reset) begin
 			vectornum=5'd0; inputrows=4'b0000; clockticks = 16'b0;
 			end else begin
-				clockticks = clockticks + 16'b1
+				clockticks = clockticks + 16'b1;
 				end
 			
 

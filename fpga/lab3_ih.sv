@@ -3,6 +3,7 @@ module lab3_ih(input logic reset,
 				output logic [3:0] cols,
                 output logic [6:0] segmentOut,
                 output logic anodeZeroOut, anodeOneOut);
+				
 logic clk, int_osc;
 logic buttonpush, synch_done, debounce_done, post_debounce, scan_counter_en, WE_synch, debouncer_counter_en, check_again, WE_send;
 logic seg0anode, seg1anode;
