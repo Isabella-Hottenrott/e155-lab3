@@ -29,7 +29,6 @@ colrowseg colrowseg1(.col_row_comb(seg1), .digit(digits1), .anode(seg1anode));
 segments segments0(.digit(digits0), .segs(segment0));
 segments segments1(.digit(digits1), .segs(segment1));
 
-//made the time clock clk instead of int_osc just for sim
 anodeselect ANODESELECT (.int_osc(int_osc), .reset(reset), .seg0anode(seg0anode), 
 			.seg1anode(seg1anode), .segment0(segment0), .segment1(segment1), 
 			.segmentOut(segmentOut), .anodeZeroOut(anodeZeroOut), .anodeOneOut(anodeOneOut));
