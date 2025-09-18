@@ -2,7 +2,7 @@
 // tb_fsm.sv
 // ihottenrott@g.hmc.edu
 // 13/9/2025
-// Testbench for fsm.sv module in Lab3ih
+// Testbench for fsm module in Lab 3
 
 module tb_fsm();
 	logic clk, reset;

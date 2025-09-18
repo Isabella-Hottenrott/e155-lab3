@@ -1,3 +1,9 @@
+// Isabella Hottenrott
+// segments.sv
+// ihottenrott@g.hmc.edu
+// 19/9/2025
+// Module containing Verilog code for Seven-segment display mapping
+
 module segments(input logic [3:0] digit,
                 output logic [6:0] segs);
 

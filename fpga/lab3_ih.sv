@@ -1,3 +1,9 @@
+// Isabella Hottenrott
+// lab3_ih.sv
+// ihottenrott@g.hmc.edu
+// 19/9/2025
+// Top module for Lab 3
+
 module lab3_ih(input logic reset, 
                 input logic [3:0] inputrows,
 				output logic [3:0] cols,

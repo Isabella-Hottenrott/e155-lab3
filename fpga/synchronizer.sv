@@ -1,3 +1,8 @@
+// Isabella Hottenrott
+// synchronizer.sv
+// ihottenrott@g.hmc.edu
+// 9/9/2025
+// Module containing Verilog synchronization of asynchronous/timely inputs
 
 module synchronizer(input logic clk, reset,
                     input logic WE_synch,

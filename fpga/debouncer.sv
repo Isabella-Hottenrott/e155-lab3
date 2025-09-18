@@ -1,3 +1,9 @@
+// Isabella Hottenrott
+// debouncer.sv
+// ihottenrott@g.hmc.edu
+// 19/9/2025
+// Module containing debounce counter for switch presses
+
 module debouncer(input logic clk, reset,
                 input logic debouncer_counter_en,
                 output logic debounce_done);

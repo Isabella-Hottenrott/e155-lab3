@@ -1,7 +1,15 @@
+// Isabella Hottenrott
+// colrowseg.sv
+// ihottenrott@g.hmc.edu
+// 19/9/2025
+// Module containing encoding for column and row entries 
+// into the segment module
+
 module colrowseg(input logic [8:0] col_row_comb,
                 output logic [3:0] digit,
 				output logic anode);
-logic [7:0] intermediate;assign intermediate = col_row_comb[7:0];
+logic [7:0] intermediate;
+assign intermediate = col_row_comb[7:0];
 
 
 always_comb

@@ -1,3 +1,9 @@
+// Isabella Hottenrott
+// combcol.sv
+// ihottenrott@g.hmc.edu
+// 19/9/2025
+// Module containing binary encoding for columns
+
 module combcol(input logic [1:0] incols,
                 output logic [3:0] outcols);
 

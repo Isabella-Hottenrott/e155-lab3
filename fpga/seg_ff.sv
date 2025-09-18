@@ -1,3 +1,10 @@
+// Isabella Hottenrott
+// seg_ff.sv
+// ihottenrott@g.hmc.edu
+// 19/9/2025
+// Module containing a flop-enable for the output
+// of the design.
+
 module seg_ff(input logic clk, reset,
             input logic WE_send,
             input logic [3:0] cols,

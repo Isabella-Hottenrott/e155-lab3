@@ -1,3 +1,9 @@
+// Isabella Hottenrott
+// tb_colrowseg.sv
+// ihottenrott@g.hmc.edu
+// 19/9/2025
+// Testbench for the colrowseg module for E155 Lab 3
+
 module tb_colrowseg();
 	logic clk, reset, anode, anexp;
     logic [3:0] digit, expdigit;

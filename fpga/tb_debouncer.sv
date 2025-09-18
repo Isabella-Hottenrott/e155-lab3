@@ -2,7 +2,7 @@
 // tb_debouncer.sv
 // ihottenrott@g.hmc.edu
 // 13/9/2025
-// Testbench for debouncer.sv module in Lab3ih
+// Testbench for debouncer module in Lab 3
 
 module tb_debouncer();
 	logic clk, reset;

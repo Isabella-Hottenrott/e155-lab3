@@ -1,3 +1,9 @@
+// Isabella Hottenrott
+// DataPath.sv
+// ihottenrott@g.hmc.edu
+// 19/9/2025
+// Module for the datapath of Lab 3
+
 module DataPath(input logic clk, reset,
 				input logic [3:0] inputrows,
 				input logic scan_counter_en, WE_synch, debouncer_counter_en, check_again, WE_send,

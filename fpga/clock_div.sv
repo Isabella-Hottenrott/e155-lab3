@@ -1,7 +1,7 @@
 // Isabella Hottenrott
 // clock_div.sv
 // ihottenrott@g.hmc.edu
-// 9/9/2025
+// 19/9/2025
 // Module containing Verilog code for clock division to 60 Hz.
 
 module clock_div(input logic reset,

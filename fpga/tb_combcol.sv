@@ -2,7 +2,8 @@
 // tb_combcol.sv
 // ihottenrott@g.hmc.edu
 // 13/9/2025
-// Testbench for combcol.sv module in Lab3ih
+// Testbench for combcol module in Lab 3
+
 
 module tb_combcol();
 	logic clk, reset;
