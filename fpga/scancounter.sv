@@ -1,3 +1,10 @@
+// Isabella Hottenrott
+// scancounter.sv
+// ihottenrott@g.hmc.edu
+// 19/9/2025
+// Module containing incrementer that allows scanning of columns 
+// on the 4x4 keypad
+
 module scancounter(input logic clk, reset,
                     input logic scan_counter_en,
                     output logic [1:0] encoded_cols);

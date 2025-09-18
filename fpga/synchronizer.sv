@@ -1,3 +1,8 @@
+// Isabella Hottenrott
+// synchronizer.sv
+// ihottenrott@g.hmc.edu
+// 9/9/2025
+// Module containing Verilog synchronization of asynchronous/timely inputs
 
 module synchronizer(input logic clk, reset,
                     input logic WE_synch,
@@ -20,6 +25,7 @@ always_ff @(posedge clk) begin
 end
 
 assign synch_done = (synch_count == 2'b10);
+// send a done signal to FSM when two clock cycles have past
 
 endmodule
 

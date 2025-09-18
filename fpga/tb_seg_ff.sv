@@ -2,7 +2,7 @@
 // tb_debouncer.sv
 // ihottenrott@g.hmc.edu
 // 13/9/2025
-// Testbench for seg_ff.sv module in Lab3ih
+// Testbench for seg_ff module in Lab 3
 
 module tb_seg_ff();
     logic clk, reset;

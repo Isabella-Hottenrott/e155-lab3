@@ -1,3 +1,9 @@
+// Isabella Hottenrott
+// FSM.sv
+// ihottenrott@g.hmc.edu
+// 19/9/2025
+// Module containing FSM logic for Lab 3
+
 module FSM(input logic clk, reset,
 				input logic buttonpush, synch_done, debounce_done, post_debounce,
 				output logic scan_counter_en, WE_synch, debouncer_counter_en, check_again, WE_send);

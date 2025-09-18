@@ -2,7 +2,7 @@
 // tb_scancounter.sv
 // ihottenrott@g.hmc.edu
 // 13/9/2025
-// Testbench for scancounter.sv module in Lab3
+// Testbench for scancounter module in Lab 3
 
 module tb_scancounter();
 	logic clk, reset;

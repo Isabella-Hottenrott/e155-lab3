@@ -1,8 +1,8 @@
 // Isabella Hottenrott
-// tb_debouncer.sv
+// tb_Datapath.sv
 // ihottenrott@g.hmc.edu
 // 13/9/2025
-// Testbench for seg_ff.sv module in Lab3ih
+// Testbench for the Datapath module in Lab 3
 
 module tb_DataPath();
     logic clk, reset;
